@@ -1,0 +1,708 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="./assets/OnePageScroll/jquery.onepage-scroll.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./assets/OnePageScroll/onepage-scroll.css">
+<link rel="shortcut icon" href="./assets/ico/arc.png">
+<title>A Pensive Berry</title>
+
+	<script>
+	function bodyOnload(){
+		var c = document.getElementById("centreObject");
+		var ctx = c.getContext("2d");
+		ctx.strokeStyle = '#ff0000';
+		ctx.moveTo(100,25);
+		ctx.lineTo(14,175);
+		ctx.stroke();
+		ctx.moveTo(100,25);
+		ctx.lineTo(186,175);
+		ctx.stroke();
+		ctx.moveTo(14,175);
+		ctx.lineTo(186,175);
+		ctx.stroke();
+		
+		
+		$(".main").onepage_scroll({
+		   sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
+		   easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+		                                    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+		   animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
+		   pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
+		   updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+		   beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
+		   afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
+		   loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+		   keyboard: true,                  // You can activate the keyboard controls
+		   responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
+		                                    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
+		                                    // the browser's width is less than 600, the fallback will kick in.
+		   direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
+		});
+		
+	}
+	
+	
+	function scroll(toNum) {
+		var allLinks = document.getElementsByTagName("a");
+		for(var i=0; i<allLinks.length; i++){
+			if(allLinks[i].getAttribute("data-index")==toNum){
+				allLinks[i].click();
+				return;
+			}
+		}
+	}
+	
+	
+	function showTheSite(obj) {
+		obj.style.opacity="0";
+		document.getElementById("centreObject").style.opacity="1";
+		document.getElementById("mainTitle").style.opacity="1";
+		document.getElementById("bg-wrapper").style.backgroundColor = "black";
+		document.getElementById("caption").style.opacity="1";
+		document.getElementById("share").style.webkitTransform="translate3d(-50%, 250%, 0)";
+		document.getElementById("share").style.transform="translate3d(-50%, 250%, 0)";
+	}
+	
+	
+	function changeBgColor(color){
+		document.getElementById("bg-wrapper").style.backgroundColor = color;
+	}
+	
+	
+	function redirect(path) {
+		 window.open(path, '_blank');
+	}
+
+	</script>
+	
+	<style>
+	
+	
+	
+	
+		/*** loading page ***/
+		.loading {
+			background: url('./assets/backgrounds/Preloader.gif') no-repeat center center;
+		}
+		
+		section {
+			opacity: 0;
+		    -webkit-transition:opacity .6s;
+		    -moz-transition:opacity .6s;
+		    -o-transition:opacity .6s;
+		    transition: opacity .6s;
+		}
+		
+		.loaded section {
+			opacity: 1;
+		}
+		
+		/*** loading ENDS ***/
+	
+
+		@font-face {
+		    font-family: infinity;
+		    src: url(./assets/font/Infinity.ttf);
+		}
+	
+	
+		@font-face {
+		    font-family: corbert;
+		    src: url(./assets/font/Corbert-Regular.otf);
+		}
+		body{
+			padding: 0px;
+			font-family: infinity;
+			font-weight: 100;
+			font-size: 30;
+			letter-spacing: 1px;
+		}
+		#bg-wrapper{
+			text-align: center;
+			vertical-align: center;
+			position: absolute;
+			z-index: 0;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			-webkit-transition: background-color 0.5s; 
+			transition: background-color 0.5s;
+
+		}
+		#centreObject{
+			position: absolute;
+			display: block;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -50%, 0);
+			-webkit-transform: translate3d(-50%, -50%, 0);
+			opacity: 0;
+			-webkit-transition: opacity 0.5s; 
+			transition: opacity 0.5s;
+			-webkit-transition-delay: 2s; 
+			transition-delay: 2s;
+			z-index: 1;
+		}
+		
+
+		
+		#mainCover{
+			position: absolute;
+			display: block;
+			font-size: 150%;
+			font-weight: 100;
+			color: black;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -100%, 0);
+			-webkit-transform: translate3d(-50%, -100%, 0);
+			opacity: 1;
+			-webkit-transition: opacity 0.5s; 
+			transition: opacity 0.5s;
+			-webkit-transition-delay: 1s; 
+			transition-delay: 1s;
+			z-index: 3;
+		}
+		
+		#mainTitle{
+			position: absolute;
+			color: white;
+			display: block;
+			font-size: 150%;
+			font-weight: 100;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -100%, 0);
+			-webkit-transform: translate3d(-50%, -100%, 0);
+			opacity: 0;
+			-webkit-transition: opacity 0.5s; 
+			transition: opacity 0.5s;
+			-webkit-transition-delay: 1s; 
+			transition-delay: 1s;
+			z-index: 2;
+		}
+		
+		#caption{
+			position: absolute;
+			color: white;
+			display: block;
+			font-size: 80%;
+			font-weight: 100;
+			top: 51%;
+			left: 50%;
+			transform: translate3d(-50%, 0%, 0);
+			-webkit-transform: translate3d(-50%, 0%, 0);
+			opacity: 0;
+			-webkit-transition: opacity 0.5s; 
+			transition: opacity 0.5s;
+			-webkit-transition-delay: 2.5s; 
+			transition-delay: 2.5s;
+			z-index: 2;
+			
+		}
+		.footBar{
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			width: 100%;
+			height: 10%;
+			background: rgba(0, 0, 0, 1);
+			opacity: 0;
+			z-index: 6;
+			-webkit-transition: opacity 0.5s; 
+			transition: opacity 0.5s;
+			text-align: center;
+			cursor: pointer;
+		}
+		
+		.footBar:hover{
+			opacity: 1;
+		}
+		
+		.footBar p{
+			color: white;
+			font-size: 100%;
+			font-weight: 100;
+		}
+		
+		#share{
+			position: absolute;
+			left: 0px;
+			width: 100%;
+			height: 7%;
+			top: 50%;
+			left: 50%;
+			-webkit-transition: -webkit-transform 1s ease; 
+			transition: transform 1s ease;
+			transform: translate3d(-150%, 250%, 0);
+			-webkit-transform: translate3d(-150%, 250%, 0);
+			-webkit-transition-delay: 3s; 
+			transition-delay: 3s;
+			z-index: 6;
+		}
+		
+	
+		.shareButtons{
+			position: relative;
+			bottom: 0px;
+			left: 0px;
+			height: 100%;
+			width: auto;
+			opacity: 1;
+			z-index: 6;
+		}
+		.shareButtons:hover{
+			cursor: pointer;
+		}
+		
+		#myname h1{
+			position: absolute;
+			right: 10%;
+			top: 10%;
+			font-size: 400%;
+			font-weight: 100;
+		}
+		
+		
+		#bio{
+			position: absolute;
+			left: 10%;
+			right: 10%;
+			top:  40%;
+			bottom: 5%;
+			font-weight: 100;
+			overflow: hidden;
+		}
+		
+		
+		
+		
+		
+		/********************* Story Pages *********************/
+		
+		.story-page{
+			background: white;
+			-webkit-transition: background .5s; 
+			transition: background .5s;
+			-webkit-transition-delay: 1s; 
+			transition-delay: 1s;
+			font-family: corbert;
+			font-weight: 200;
+		}
+		
+		
+		.story-page .attraction{
+			position: absolute;
+			text-align: center;
+			top: 20%;
+			bottom: 53%;
+			left: 50%;
+			width: 70%;
+			height: auto;
+			z-index: 6;
+			transform: translate3d(-50%, 0%, 0);
+			-webkit-transform: translate3d(-50%, 0%, 0);
+		}
+		
+		.story-page .attraction h1{
+			position: absolute;
+			font-size: 170%;
+			font-weight: 100;
+			color: white;
+			margin: 0px;
+			
+		}
+		
+				
+		.story-page .glimpse{
+			position: absolute;
+			left: 15%;
+			right: 15%;
+			top: 50%;
+			bottom: 25%;
+			font-size: 80%;
+			font-weight: 100;
+			overflow: hidden;
+			z-index: 6;
+			color: white;
+			-webkit-transition: -webkit-transform 1s ease, opacity 1s; 
+			transition: transform 1s ease, opacity 1s;
+			transform: translate3d(0%, 20%, 0);
+			-webkit-transform: translate3d(0%, 20%, 0);
+			-webkit-transition-delay: 1s; 
+			transition-delay: 1s;
+			opacity: 0;
+		}
+		
+		.viewing-page-2 .story-page .glimpse{
+			transform: translate3d(0%, 0%, 0);
+			-webkit-transform: translate3d(0%, 0%, 0);
+			opacity: 1;
+		}
+		
+		.story-page .colorful{
+			position: absolute;
+			z-index: 0;
+			left: 0%;
+			top: 0%;
+			height: 100%;
+			width: 100%;
+		}
+		
+		.story-page p{
+			margin: 0px;
+		}
+		
+		.story-page .colorful-wrapper{
+			position: absolute;
+			z-index: 100;
+			left: 0%;
+			top: 0%;
+			height: 100%;
+			width: 100%;
+			background-color:rgba(0,0,0,0.5);
+			
+		}
+		
+		
+		.story-page .button-bar{
+			z-index: 6;
+			font-size: 100%;
+			color: white;
+			position: absolute;
+			top: 90%;
+			bottom: 0%;
+			height: auto;
+			width: 100%;
+			text-align: center;
+			-webkit-transition: -webkit-transform .5s ease, opacity 1s; 
+			transition: transform .5s ease, opacity 1s; 
+			opacity: 0;
+			-webkit-transition-delay: 1s; 
+			transition-delay: 1s;
+		}
+		
+		.viewing-page-2 .story-page .button-bar{
+			opacity: 1;		
+		}
+		
+		.story-page .readmore{
+			position: absolute;
+			cursor: pointer;
+			left: 50%;
+			top: 0%;
+			height: 100%;	
+			width: 50%;
+			-webkit-transition: background-color .5s;  
+			transition: background-color .5s; 
+			background-color:rgba(0,0,0,0.5);
+			
+		}
+		
+		.story-page .readmore:hover{
+			background-color:rgba(17,129,65,0.6);
+		}
+		
+		.story-page .readmore p{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -50%, 0);
+			-webkit-transform: translate3d(-50%, -50%, 0);
+		}
+		
+		.story-page .explore{
+			position: absolute;
+			cursor: pointer;
+			left: 0%;
+			top: 0%;
+			height: 100%;	
+			width: 50%;
+			-webkit-transition: background-color .5s; 
+			transition: background-color .5s; 
+			background-color:rgba(0,0,0,0.5);
+		}
+		
+		.story-page .explore:hover{
+			background-color:rgba(42,9,65,0.6);
+		}
+		
+		.story-page .explore p{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -50%, 0);
+			-webkit-transform: translate3d(-50%, -50%, 0);
+		}
+		
+		
+		/********************* Story Pages ENDS *********************/
+		
+		
+		/********************* Project Pages *********************/
+		
+		
+		.project-page{
+			background: black;
+			-webkit-transition: background .5s; 
+			transition: background .5s;
+			-webkit-transition-delay: 1s; 
+			transition-delay: 1s;
+			font-family: corbert;
+			font-weight: 200;
+		}
+		
+		
+		.project-page .attraction{
+			position: absolute;
+			text-align: left;
+			top: 20%;
+			bottom: 63%;
+			left: 50%;
+			width: 70%;
+			height: auto;
+			z-index: 6;
+			transform: translate3d(-60%, 0%, 0);
+			-webkit-transform: translate3d(-60%, 0%, 0);
+		}
+		
+		 
+		.project-page .attraction h1{
+			position: absolute;
+			font-size: 170%;
+			font-weight: 100;
+			color: white;
+			margin: 0px;
+			
+		}
+		
+				
+		.project-page .glimpse{
+			position: absolute;
+			left: 15%;
+			right: 15%;
+			top: 40%;
+			bottom: 35%;
+			font-size: 80%;
+			font-weight: 100;
+			overflow: hidden;
+			z-index: 6;
+			color: white;
+			-webkit-transition: -webkit-transform 1s ease, opacity 1s; 
+			transition: transform 1s ease, opacity 1s;
+			transform: translate3d(0%, 20%, 0);
+			-webkit-transform: translate3d(0%, 20%, 0);
+			-webkit-transition-delay: 1s; 
+			transition-delay: 1s;
+			opacity: 0;
+		}
+		
+		.viewing-page-3 .project-page .glimpse{
+			transform: translate3d(0%, 0%, 0);
+			-webkit-transform: translate3d(0%, 0%, 0);
+			opacity: 1;
+		}
+		
+		.project-page .colorful{
+			position: absolute;
+			z-index: 0;
+			left: 0%;
+			top: 0%;
+			height: 100%;
+			width: 100%;
+		}
+		
+		.project-page p{
+			margin: 0px;
+		}
+		
+		.project-page .colorful-wrapper{
+			position: absolute;
+			z-index: 100;
+			left: 0%;
+			top: 0%;
+			height: 100%;
+			width: 100%;
+			background-color:rgba(0,0,0,0.5);
+			
+		}
+		
+		
+		.project-page .button-bar{
+			z-index: 6;
+			font-size: 100%;
+			color: white;
+			position: absolute;
+			top: 90%;
+			bottom: 0%;
+			height: auto;
+			width: 100%;
+			text-align: center;
+			-webkit-transition: -webkit-transform .5s ease, opacity 1s; 
+			transition: transform .5s ease, opacity 1s; 
+			opacity: 0;
+			-webkit-transition-delay: 1s; 
+			transition-delay: 1s;
+		}
+		
+		.viewing-page-3 .project-page .button-bar{
+			opacity: 1;		
+		}
+		
+		.project-page .readmore{
+			position: absolute;
+			cursor: pointer;
+			left: 50%;
+			top: 0%;
+			height: 100%;	
+			width: 50%;
+			-webkit-transition: background-color .5s;  
+			transition: background-color .5s; 
+			background-color:rgba(0,0,0,0.5);
+			
+		}
+		
+		.project-page .readmore:hover{
+			background-color:rgba(17,129,65,0.6);
+		}
+		
+		.project-page .readmore p{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -50%, 0);
+			-webkit-transform: translate3d(-50%, -50%, 0);
+		}
+		
+		.project-page .explore{
+			position: absolute;
+			cursor: pointer;
+			left: 0%;
+			top: 0%;
+			height: 100%;	
+			width: 50%;
+			-webkit-transition: background-color .5s; 
+			transition: background-color .5s; 
+			background-color:rgba(0,0,0,0.5);
+		}
+		
+		.project-page .explore:hover{
+			background-color:rgba(42,9,65,0.6);
+		}
+		
+		.project-page .explore p{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -50%, 0);
+			-webkit-transform: translate3d(-50%, -50%, 0);
+		}
+		
+		
+		
+		/********************* Project Pages ENDS *********************/
+		
+		
+		
+
+	</style>
+	
+	
+	
+</head>
+
+
+<body id="body" class="loading" onload="bodyOnload()">
+	<div class="main">
+		<section>
+		<div id="bg-wrapper">
+			<canvas id="centreObject" width="200" height="200">
+				Error 000
+			</canvas>
+			<h1 id="mainCover" onmouseover="showTheSite(this)">Creativity Starts <font color="red" id="changer">Here.</font></h1>
+			<h1 id="mainTitle">Welcome To My Home Page</h1>
+			<p id="caption">The site is proudly presented by <font color="">Blarry</font></p>
+			
+			<div id="share">
+				<img onmouseout="changeBgColor('black')" onmouseover="changeBgColor('#3b5998')" class="shareButtons" src="./assets/ico/facebook.ico"/>
+				<img onmouseout="changeBgColor('black')" onmouseover="changeBgColor('#C92228')" class="shareButtons" src="./assets/ico/pin.ico"/>
+				<img onmouseout="changeBgColor('black')" onmouseover="changeBgColor('#4099FF')" class="shareButtons" src="./assets/ico/twitter.ico"/>
+			</div>
+		</div>
+		<div class="footBar" onclick="scroll(4)">
+			<p>Who is this "Blarry"?</p>
+		</div>
+		</section>
+			
+		<section class="story-page" id="sample-name">
+			<div class="colorful-wrapper">
+				<div class="attraction">
+					<h1>
+						Is Finland's Slump A Glimpse Into Europe's Future?
+					</h1>
+				</div>
+	
+				<div class="glimpse">
+					<p >The debate about Europe's economic problems tends to focus heavily on the need for countries such as Italy and Greece to introduce "structural reforms" to boost growth. However, Europe's slump ranges far wider than southern European countries with a reputation for inefficiency and lax fiscal policy...</p>
+				</div>
+				<div class="button-bar">
+					<div class="explore" onclick="redirect('https://medium.com/just-another-thought/')"><p>More Stories</p></div>
+					<div class="readmore"  onclick="redirect('https://medium.com/bull-market/is-finland-s-slump-a-glimpse-into-europe-s-future-3ead34461dd3')" ><p>Finish Reading</p></div>
+				</div>
+			</div>
+			
+			<img src="./assets/backgrounds/story-one.jpeg" class="colorful"/>
+
+		</section>
+		
+		
+		
+		
+		
+		<section class="project-page">
+			<div class="colorful-wrapper">
+				<div class="attraction">
+					<h1>Uncovering The Myth of User Preference</h1>
+				</div>
+				<div class="glimpse">
+					<p>For marketers, to really know your shit.</p>
+					<br/>
+					<p>Based on how much time does the user spend time with the content, and content attributes, Project Intimate has the power to dynamically <font color="#FFE5E5">foresee</font> the user's preference toward a content that he/she has never seen before.</p>
+				</div>
+				<div class="button-bar">
+					<div class="explore"  onclick="redirect('https://github.com/BBBBlarry?tab=repositories')" ><p>All My Projects</p></div>
+					<div class="readmore" onclick="redirect('https://github.com/BBBBlarry/ProjectIntimate')"><p>Explore Intimate</p></div>
+				</div>
+			</div>
+			
+				<img src="./assets/backgrounds/story-two.jpg" class="colorful"/>
+				
+			</section>
+			
+			
+			<section>
+				<div  id="myname">
+					<h1>Blarry Wang</h1>
+				</div>
+				<div id="bio">
+					<p>Long time ago, there was a berry hanging on a tree. It was contemplating, so deeply, determining whether every life has its significant value. A farmer spotted the juicy berry. Without hesitation, he picked it from the tree and bit it, omitting somewhat satisfaction. </p>
+					<p>Hmmmm, I guess every life does have its <font color="red">significant</font> value.</p>
+				</div>
+			<div class="colorful-wrapper">
+		</section>
+		
+</div>
+</body>
+
+
+<script type="text/javascript">
+		$(window).load(function() {
+		    window.setTimeout(function(){
+		        $('body').removeClass("loading").addClass('loaded');
+		    }, 3000);
+		});
+</script>
+
+
+</html>
