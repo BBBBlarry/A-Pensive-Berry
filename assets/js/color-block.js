@@ -58,6 +58,7 @@ $('.blocks').each(function() {
 
 
 var w = new Worker("blockWorker.js");
+alert(w);
 w.onmessage = function(event){
   flipABlock();
 };
