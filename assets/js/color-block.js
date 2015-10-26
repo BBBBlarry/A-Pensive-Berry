@@ -62,6 +62,9 @@ function flipABlock(){
 }
 
 
+setInterval(flipABlock(), 3000);
+
+/*
 var w = new Worker("blockWorker.js");
 w.onmessage = function(event){
   alert(event.data);
@@ -69,3 +72,4 @@ w.onmessage = function(event){
 
 w.postMessage("Establish debug connection...");
 
+*/
