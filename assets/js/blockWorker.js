@@ -1,5 +1,9 @@
 var period = 2000;
 
+this.onmessage = function(event) {
+    postMessage("Web worker connected");
+}
+
 setInterval(function() { postMessage(1) }, period);
 
 /*
