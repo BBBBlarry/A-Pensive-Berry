@@ -54,7 +54,12 @@ $('.blocks').each(function() {
     $(this).css("background-color", colors[blockColorIndex]);
 });
 
-
+function flipABlock(){
+    var blockIndex = Math.floor(Math.random() * (totalBlock-1));
+    var blockColorIndex = Math.floor(Math.random() * size_dict(colors));
+    $("#block-"+blockIndex).transition({rotateY: 180});
+    $("#block-"+blockIndex).css("background-color", colors[blockColorIndex]);
+}
 
 
 var w = new Worker("blockWorker.js");
@@ -64,10 +69,6 @@ w.onmessage = function(event){
 };
 
 
+alert("Web worker onmessage set");
 
-function flipABlock(){
-    var blockIndex = Math.floor(Math.random() * (totalBlock-1));
-    var blockColorIndex = Math.floor(Math.random() * size_dict(colors));
-    $("#block-"+blockIndex).transition({rotateY: 180});
-    $("#block-"+blockIndex).css("background-color", colors[blockColorIndex]);
-}
+

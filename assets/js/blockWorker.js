@@ -5,6 +5,5 @@ while(true){
   postMessage(0); //debug message
   setTimeout(flip, randomTime);
   postMessage(1); //send signal to flip
-  alert("Message Out");
 }
 
