@@ -67,6 +67,5 @@ w.onmessage = function(event){
   alert(event.data);
 };
 
-alert("Web worker onmessage set");
-
+w.postMessage("Establish debug connection...");
 
