@@ -54,9 +54,13 @@ $('.blocks').each(function() {
     $(this).css("background-color", colors[blockColorIndex]);
 });
 
+
+var blockIndex;
+var blockColorIndex;
+
 function flipABlock(){
-    var blockIndex = Math.floor(Math.random() * (totalBlock-1));
-    var blockColorIndex = Math.floor(Math.random() * size_dict(colors));
+    blockIndex = Math.floor(Math.random() * (totalBlock-1));
+    blockColorIndex = Math.floor(Math.random() * size_dict(colors));
     $("#block-"+blockIndex).transition({rotateY: 180});
     $("#block-"+blockIndex).css("background-color", colors[blockColorIndex]);
 }
