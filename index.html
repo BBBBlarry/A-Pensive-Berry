@@ -4,6 +4,9 @@
 <script src="./assets/OnePageScroll/jquery.onepage-scroll.min.js"></script>
 <link rel="stylesheet" type="text/css" href="./assets/OnePageScroll/onepage-scroll.css">
 <link rel="shortcut icon" href="./assets/ico/arc.png">
+<script src="./assets/js/jquery.transit.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./assets/css/RRISE/color-block.css">
+
 <title>A Pensive Berry</title>
 
 	<script>
@@ -339,7 +342,7 @@
 			opacity: 0;
 		}
 
-		.viewing-page-2 .story-page .glimpse{
+		.viewing-page-3 .story-page .glimpse{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
@@ -387,7 +390,7 @@
 			transition-delay: 1s;
 		}
 
-		.viewing-page-2 .story-page .button-bar{
+		.viewing-page-3 .story-page .button-bar{
 			opacity: 1;
 		}
 
@@ -502,7 +505,13 @@
 			opacity: 0;
 		}
 
-		.viewing-page-3 .project-page .glimpse{
+		.viewing-page-4 .project-page .glimpse{
+			transform: translate3d(0%, 0%, 0);
+			-webkit-transform: translate3d(0%, 0%, 0);
+			opacity: 1;
+		}
+
+        .viewing-page-2 .project-page .glimpse{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
@@ -550,7 +559,10 @@
 			transition-delay: 1s;
 		}
 
-		.viewing-page-3 .project-page .button-bar{
+		.viewing-page-4 .project-page .button-bar{
+			opacity: 1;
+		}
+        .viewing-page-2 .project-page .button-bar{
 			opacity: 1;
 		}
 
@@ -639,6 +651,28 @@
 		</div>
 		</section>
 
+
+        <section class="project-page">
+			<div class="colorful-wrapper">
+				<div class="attraction">
+					<h1>Flatter, Lighter, Color</h1>
+				</div>
+				<div class="glimpse">
+					<p>ColorBlock aims to add a tinge of flatness along with liveliness to your website's user experience.</p>
+					<br/>
+					<p>A beautiful, mobile-friendly, fast-to-install background, ColorBlock makes it possible for anyone to implement a light-hearted theme to their websites within seconds.</p>
+				</div>
+				<div class="button-bar">
+					<div class="explore"  onclick="redirect('https://github.com/BBBBlarry?tab=repositories')" ><p>All My Projects</p></div>
+					<div class="readmore" onclick="redirect('https://github.com/BBBBlarry/ColorBlock')"><p>Explore ColorBlock</p></div>
+				</div>
+		    </div>
+
+			<div id="color-block"></div>
+
+		</section>
+
+
 		<section class="story-page" id="sample-name">
 			<div class="colorful-wrapper">
 				<div class="attraction">
@@ -670,7 +704,7 @@
 					<h1>Uncovering The Myth of User Preference</h1>
 				</div>
 				<div class="glimpse">
-					<p>For marketers, to really know your shit.</p>
+					<p>For marketers, to really know your stuffs.</p>
 					<br/>
 					<p>Based on how much time does the user spend time with the content, and content attributes, Project Intimate has the power to dynamically <font color="#FFE5E5">foresee</font> the user's preference toward a content that he/she has never seen before.</p>
 				</div>
@@ -683,6 +717,7 @@
 				<img src="./assets/backgrounds/story-two.jpg" class="colorful"/>
 
 			</section>
+
 
 
 			<section>
@@ -707,6 +742,7 @@
 		    }, 3000);
 		});
 </script>
+<script src="./assets/js/color-block.js"></script>
 
 
 </html>
