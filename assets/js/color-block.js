@@ -64,7 +64,7 @@ function flipABlock(){
 
 var w = new Worker("blockWorker.js");
 w.onmessage = function(event){
-  alert("Message In: "+event.data);
+  alert("Message In");
   flipABlock();
 };
 

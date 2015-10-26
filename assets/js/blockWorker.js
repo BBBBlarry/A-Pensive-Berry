@@ -1,9 +1,10 @@
 var randomTime;
 
 
-  randomTime = Math.floor(Math.random() * 2000); //less than 2s
-  postMessage(0); //debug message
-  setTimeout(flip, randomTime);
-  postMessage(1); //send signal to flip
 
+function periodicSignal() {
+    randomTime = Math.floor(Math.random() * 200); //less than .2second
+    postMessage(1);
+    setTimeout("timedCount()",randomTime);
+}
 
