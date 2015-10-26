@@ -64,11 +64,11 @@ function flipABlock(){
 
 var w = new Worker("blockWorker.js");
 w.onmessage = function(event){
-  $("#landing-subtitle").html("101");
+  $("#landing-subtitle").html("10");
 
 };
 
-
+$("#landing-subtitle").html("101");
 alert("Web worker onmessage set");
 
 
