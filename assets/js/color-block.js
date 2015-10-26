@@ -65,10 +65,8 @@ function flipABlock(){
 var w = new Worker("blockWorker.js");
 w.onmessage = function(event){
   alert(event.data);
-
 };
 
-$("#landing-subtitle").html("101");
 alert("Web worker onmessage set");
 
 
