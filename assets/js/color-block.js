@@ -62,7 +62,7 @@ function flipABlock(){
 }
 
 
-setInterval(flipABlock(), 3000);
+setInterval(flipABlock(), 300);
 
 /*
 var w = new Worker("blockWorker.js");

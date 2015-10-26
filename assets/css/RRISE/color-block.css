@@ -17,6 +17,6 @@
   z-index: 0;
 
   //flip
-  transition: 0.3s;
+  transition: 1s;
 	transform-style: preserve-3d;
 }
