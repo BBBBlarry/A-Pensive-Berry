@@ -55,18 +55,30 @@ $('.blocks').each(function() {
 });
 
 
-var blockIndex;
-var blockColorIndex;
 
-function flipABlock(){
-    blockIndex = Math.floor(Math.random() * (totalBlock-1));
-    blockColorIndex = Math.floor(Math.random() * size_dict(colors));
-    $("#block-"+blockIndex).transition({rotateY: 180});
-    $("#block-"+blockIndex).css("background-color", colors[blockColorIndex]);
+
+var rotated = [];
+for(var i = 0; i < totalBlock; i++){
+  rotated.push("0");
 }
 
 
-setInterval(flipABlock(), 300);
+function flipABlock(){
+    var blockIndex = Math.floor(Math.random() * (totalBlock-1));
+    var blockColorIndex = Math.floor(Math.random() * size_dict(colors));
+    if(rotated[blockIndex] == 0){
+      $("#block-"+blockIndex).transition({rotateY: 180});
+      rotated[blockIndex] = 1;
+    }else{
+      $("#block-"+blockIndex).transition({rotateY: 0});
+      rotated[blockIndex] = 0;
+    }
+    $("#block-"+blockIndex).css("background-color", colors[blockColorIndex]);
+}
+
+flipABlock();
+setInterval("flipABlock()", 3000);
+setInterval("flipABlock()", 7000);
 
 /*
 var w = new Worker("blockWorker.js");
