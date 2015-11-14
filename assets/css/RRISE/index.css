@@ -48,3 +48,8 @@
   background-color: red;
   z-index: 0;
 }
+
+#construction{
+  background-image: url("../../backgrounds/construction.png");
+  background-repeat: repeat;
+}
