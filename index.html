@@ -6,6 +6,7 @@
 <link rel="shortcut icon" href="./assets/ico/arc.png">
 <script src="./assets/js/jquery.transit.min.js"></script>
 <link rel="stylesheet" type="text/css" href="./assets/css/RRISE/color-block.css">
+<link rel="image_src" href="/assets/ico/arc.png" />
 
 <title>A Pensive Berry</title>
 
@@ -88,6 +89,16 @@
 			background: url('./assets/backgrounds/Preloader.gif') no-repeat center center;
 		}
 
+        .loading #preloadText{
+            display : block;
+            text-align: center;
+            position: fixed;
+			z-index: 0;
+			top: 60%; /* wild guess */
+            width: 20%; /*centering*/
+            left: 40%;
+        }
+
 		section {
 			opacity: 0;
 		    -webkit-transition:opacity .6s;
@@ -99,6 +110,9 @@
 		.loaded section {
 			opacity: 1;
 		}
+        .loaded #preloadText{
+            display : none;
+        }
 
 		/*** loading ENDS ***/
 
@@ -124,6 +138,7 @@
 			left: 0px;
 			right: 0px;;
 		}
+
 		#bg-wrapper{
 			text-align: center;
 			vertical-align: center;
@@ -630,6 +645,11 @@
 
 
 <body id="body" class="loading" onload="bodyOnload()">
+
+
+    <div id="preloadText"><span>Picking berries...</span></div>
+
+
 	<div class="main">
 		<section>
 		<div id="bg-wrapper">
