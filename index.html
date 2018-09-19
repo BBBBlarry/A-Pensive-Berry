@@ -35,7 +35,7 @@
 
 		$(".main").onepage_scroll({
 		   sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
-		   easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+		   easing: "ease",              // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
 		                                    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
 		   animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
 		   pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
@@ -113,10 +113,6 @@
 		}
 
 		.loaded #headerBar {
-			opacity: 1;
-		}
-
-		.loaded #background {
 			opacity: 1;
 		}
 
@@ -198,8 +194,8 @@
 			opacity: 1;
 			-webkit-transition: opacity 0.5s;
 			transition: opacity 0.5s;
-			-webkit-transition-delay: 1s;
-			transition-delay: 1s;
+			-webkit-transition-delay: 0.5s;
+			transition-delay: 0.5s;
 			z-index: 3;
 		}
 
@@ -216,8 +212,8 @@
 			opacity: 0;
 			-webkit-transition: opacity 0.5s;
 			transition: opacity 0.5s;
-			-webkit-transition-delay: 1s;
-			transition-delay: 1s;
+			-webkit-transition-delay: 0.5s;
+			transition-delay: 0.5s;
 			z-index: 2;
 		}
 
@@ -294,7 +290,28 @@
 			cursor: pointer;
 		}
 
-		#myname h1{
+		.myname h1{
+			position: absolute;
+			right: 10%;
+			top: 10%;
+			font-size: 400%;
+			font-weight: 100;
+			color: white;
+		}
+
+
+		.bio{
+			position: absolute;
+			left: 10%;
+			right: 10%;
+			top:  40%;
+			bottom: 5%;
+			font-weight: 100;
+			overflow: hidden;
+			color: white;
+		}
+
+		.cleanTitle h1{
 			position: absolute;
 			right: 10%;
 			top: 10%;
@@ -303,7 +320,7 @@
 		}
 
 
-		#bio{
+		.cleanText{
 			position: absolute;
 			left: 10%;
 			right: 10%;
@@ -369,6 +386,7 @@
 			background-size: contain;
 			background-repeat: no-repeat;
     	background-position: center;
+			cursor: pointer;
 		}
 
 		#headerBar-row #logo-reflection {
@@ -382,7 +400,10 @@
 			display: table-cell;
 			text-align: center;
 			vertical-align: middle;
+			cursor: pointer;
 		}
+
+
 
 
 		/********************* Header Bar ENDS *********************/
@@ -392,9 +413,9 @@
 
 
 
-		/************************* Background ***********************/
+		/************************* Backgrounds ***********************/
 
-		#background {
+		#background-1 {
 			background-image: url("./assets/backgrounds/laptop.jpeg");
 			background-size:cover;
 			background-repeat: no-repeat;
@@ -407,14 +428,197 @@
 			bottom:0px;
 			top:0px;
 
-			-webkit-transition: -webkit-transform 1s ease, width 1s, opacity .6s;
-			transition: transform 1s ease, width 1s, opacity .6s;
+			-webkit-transition: -webkit-transform 1s ease, width 1s, opacity 1s ease .5s;
+			transition: transform 1s ease, width 1s, opacity 1s ease .5s;
 
 			opacity: 0;
 
 		}
 
-		.viewing-page-1 #background {
+		.loaded.viewing-page-1 #background-1 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-2 #background-1 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-3 #background-1 {
+			opacity: 1;
+		}
+		.loaded.viewing-page-4 #background-1 {
+			opacity: 1;
+		}
+		.loaded.viewing-page-5 #background-1 {
+			opacity: 1;
+		}
+		.loaded.viewing-page-6 #background-1 {
+			opacity: 1;
+		}
+		.loaded.viewing-page-7 #background-1 {
+			opacity: 1;
+		}
+		.loaded.viewing-page-8 #background-1 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-9 #background-1 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-10 #background-1 {
+			opacity: 0;
+		}
+
+
+		#background-2 {
+			background-image: url("./assets/backgrounds/seattle-background.jpg");
+			background-size:cover;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			position: fixed;
+			z-index: 0;
+			left:0px;
+			right:0px;
+			bottom:0px;
+			top:0px;
+
+			-webkit-transition: -webkit-transform 1s ease, width 1s, opacity 1s ease .5s;
+			transition: transform 1s ease, width 1s, opacity 1s ease .5s;
+
+			opacity: 0;
+
+		}
+
+		.loaded.viewing-page-1 #background-2 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-2 #background-2 {
+			opacity: 1;
+		}
+		.loaded.viewing-page-3 #background-2 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-4 #background-2 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-5 #background-2 {
+			opacity: 0;
+
+		}
+		.loaded.viewing-page-6 #background-2 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-7 #background-2 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-8 #background-2 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-9 #background-2 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-10 #background-2 {
+			opacity: 0;
+		}
+
+		#background-3 {
+			background-image: url("./assets/backgrounds/work-background.jpg");
+			background-size:cover;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			position: fixed;
+			z-index: 0;
+			left:0px;
+			right:0px;
+			bottom:0px;
+			top:0px;
+
+			-webkit-transition: -webkit-transform 1s ease, width 1s, opacity 1s ease .5s;
+			transition: transform 1s ease, width 1s, opacity 1s ease .5s;
+
+			opacity: 0;
+
+		}
+
+		.loaded.viewing-page-1 #background-3 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-2 #background-3 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-3 #background-3 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-4 #background-3 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-5 #background-3 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-6 #background-3 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-7 #background-3 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-8 #background-3 {
+			opacity: 1;
+		}
+		.loaded.viewing-page-9 #background-3 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-10 #background-3 {
+			opacity: 0;
+		}
+
+
+		#background-4 {
+			background-image: url("./assets/backgrounds/book-background.jpeg");
+			background-size:cover;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			position: fixed;
+			z-index: 0;
+			left:0px;
+			right:0px;
+			bottom:0px;
+			top:0px;
+
+			-webkit-transition: -webkit-transform 1s ease, width 1s, opacity 1s ease .5s;
+			transition: transform 1s ease, width 1s, opacity 1s ease .5s;
+
+			opacity: 0;
+
+		}
+
+		.loaded.viewing-page-1 #background-4 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-2 #background-4 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-3 #background-4 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-4 #background-4 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-5 #background-4 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-6 #background-4 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-7 #background-4 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-8 #background-4 {
+			opacity: 0;
+		}
+		.loaded.viewing-page-9 #background-4 {
+			opacity: 1;
+		}
+		.loaded.viewing-page-10 #background-4 {
 			opacity: 0;
 		}
 
@@ -424,8 +628,8 @@
 		/*********************** Gallery Pages ************************/
 
 		.gallery-page {
-			-webkit-transition-delay: 1s;
-			transition-delay: 1s;
+			-webkit-transition-delay: 0.5s;
+			transition-delay: 0.5s;
 		}
 
 		.gallery-page .headerBarPosition {
@@ -461,20 +665,32 @@
 			height: 50%;
 			width: 40%;
 			padding-right: 5%;
-			overflow-y: hidden;
+			overflow: hidden;
+			cursor: pointer;
 
-			-webkit-transition: -webkit-transform 1s ease, opacity 1s;
-			transition: transform 1s ease, opacity 1s;
+			padding-left: 3%;
+
+			-webkit-box-shadow: 0px 0px 0px 0px #ccc;
+			box-shadow:         0px 0px 0px 0px #ccc;
+
+
+			-webkit-transition: -webkit-transform 1s ease 0.5s, opacity 1s ease 0.5s, -webkit-box-shadow 0.2s ease 0s;
+			transition: transform 1s ease 0.5s, opacity 1s ease 0.5s, box-shadow 0.2s ease 0s;
+
 			transform: translate3d(0%, 20%, 0);
 			-webkit-transform: translate3d(0%, 20%, 0);
-			-webkit-transition-delay: 1s;
-			transition-delay: 0.5s;
+
 
 			opacity: 0;
 		}
 
+		.gallery-page .box-container .box:hover {
+			-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+			box-shadow:         3px 3px 5px 6px #ccc;
+		}
+
 		/**** Transitions ****/
-		.viewing-page-2 .gallery-page .box-container .box{
+		.viewing-page-3 .gallery-page[data-index="3"] .box-container .box {
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
@@ -491,6 +707,7 @@
 		.gallery-page .box-container .box p{
 			font-family: Helvetica;
 			font-size: 12pt;
+			line-height:1.4;
 		}
 
 		/********************* Gallery Pages ENDS **********************/
@@ -499,8 +716,8 @@
 		/*********************** Showcase Pages ************************/
 
 		.showcase-page {
-			-webkit-transition-delay: 1s;
-			transition-delay: 1s;
+			-webkit-transition-delay: 0.5s;
+			transition-delay: 0.5s;
 		}
 
 		.showcase-page .headerBarPosition {
@@ -537,6 +754,9 @@
 		.showcase-page .box{
 			font-family: Helvetica;
 			font-size: 12pt;
+			font-weight: 400;
+			line-height: 1.8;
+
 			position: relative;
 			left: 10%;
 			top: 12%;
@@ -547,32 +767,32 @@
 			transition: transform 1s ease, opacity 1s;
 			transform: translate3d(0%, 20%, 0);
 			-webkit-transform: translate3d(0%, 20%, 0);
-			-webkit-transition-delay: 1s;
+			-webkit-transition-delay: 0.5s;
 			transition-delay: 0.5s;
 
 			opacity: 0;
 		}
 
 		/**** Transitions ****/
-		.viewing-page-3 .showcase-page .box{
+		.viewing-page-7 .showcase-page[data-index="7"] .box{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
 		}
 
-		.viewing-page-4 .showcase-page .box{
+		.viewing-page-4 .showcase-page[data-index="4"] .box{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
 		}
 
-		.viewing-page-5 .showcase-page .box{
+		.viewing-page-5 .showcase-page[data-index="5"] .box{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
 		}
 
-		.viewing-page-6 .showcase-page .box{
+		.viewing-page-6 .showcase-page[data-index="6"] .box{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
@@ -594,31 +814,31 @@
 			transform: translate3d(0%, 20%, 0);
 			-webkit-transform: translate3d(0%, 20%, 0);
 			-webkit-transition-delay: 2s;
-			transition-delay: 1s;
+			transition-delay: 0.5s;
 
 			opacity: 0;
 		}
 
 		/**** Transitions ****/
-		.viewing-page-3 .showcase-page .viz-container{
+		.viewing-page-7 .showcase-page[data-index="7"] .viz-container{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
 		}
 
-		.viewing-page-4 .showcase-page .viz-container{
+		.viewing-page-4 .showcase-page[data-index="4"] .viz-container{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
 		}
 
-		.viewing-page-5 .showcase-page .viz-container{
+		.viewing-page-5 .showcase-page[data-index="5"] .viz-container{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
 		}
 
-		.viewing-page-6 .showcase-page .viz-container{
+		.viewing-page-6 .showcase-page[data-index="6"] .viz-container{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
@@ -631,6 +851,7 @@
 			padding-right: 5%;
 			overflow: hidden;
 			text-align: center;
+			cursor: pointer;
 		}
 
 		.showcase-page .viz-container .viz img{
@@ -652,8 +873,8 @@
 
 		/*********************** Compact Pages ************************/
 		.compact-page {
-			-webkit-transition-delay: 1s;
-			transition-delay: 1s;
+			-webkit-transition-delay: 0.5s;
+			transition-delay: 0.5s;
 		}
 
 		.compact-page .headerBarPosition {
@@ -718,6 +939,9 @@
 		.compact-page .box{
 			font-family: Helvetica;
 			font-size: 12pt;
+			font-weight: 400;
+			line-height: 1.8;
+
 			position: relative;
 			left: 10%;
 			top: 17%;
@@ -729,43 +953,43 @@
 			transform: translate3d(0%, 20%, 0);
 			-webkit-transform: translate3d(0%, 20%, 0);
 			-webkit-transition-delay: 2s;
-			transition-delay: 1s;
+			transition-delay: 0.5s;
 
 			opacity: 0;
 		}
 
 		/**** Transitions ****/
-		.viewing-page-7 .compact-page h2{
+		.viewing-page-9 .compact-page[data-index="9"] h2{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
 		}
 
-		.viewing-page-8 .compact-page h2{
+		.viewing-page-8 .compact-page[data-index="8"] h2{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
 		}
 
-		.viewing-page-7 .compact-page h3{
+		.viewing-page-9 .compact-page[data-index="9"] h3{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
 		}
 
-		.viewing-page-8 .compact-page h3{
+		.viewing-page-8 .compact-page[data-index="8"] h3{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
 		}
 
-		.viewing-page-7 .compact-page .box{
+		.viewing-page-9 .compact-page[data-index="9"] .box{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
 		}
 
-		.viewing-page-8 .compact-page .box{
+		.viewing-page-8 .compact-page[data-index="8"] .box{
 			transform: translate3d(0%, 0%, 0);
 			-webkit-transform: translate3d(0%, 0%, 0);
 			opacity: 1;
@@ -788,20 +1012,20 @@
 
 	<div id="headerBar">
 		<div id="headerBar-row">
-			<div id="logo"></div>
-			<div class="box">
+			<div id="logo" onclick="scrollToPage(2)"></div>
+			<div class="box" onclick="redirect('../letmeknow/Blarry/Resume.pdf')">
 				<p>Resume</p>
 			</div>
-			<div class="box">
+			<div class="box" onclick="scrollToPage(3)">
 				<p>Projects</p>
 			</div>
-			<div class="box">
+			<div class="box" onclick="scrollToPage(8)">
 				<p>Internship</p>
 			</div>
-			<div class="box">
+			<div class="box" onclick="scrollToPage(9)">
 				<p>Story</p>
 			</div>
-			<div class="box">
+			<div class="box" onclick="scrollToPage(10)">
 				<p>Contact me</p>
 			</div>
 			<div id="logo-reflection"></div>
@@ -812,7 +1036,10 @@
 	</div>
 
 
-	<div id="background"> </div>
+	<div id="background-1"> </div>
+	<div id="background-2"> </div>
+	<div id="background-3"> </div>
+	<div id="background-4"> </div>
 
 	<div class="main">
 		<section>
@@ -830,11 +1057,32 @@
 				<img onmouseout="changeBgColor('#201A41', '#B5DE42')" onmouseover="changeBgColor('#4099FF', '#4099FF')" class="shareButtons" onclick="redirect('https://twitter.com/BlarryWang')" src="./assets/ico/twitter.ico"/>
 			</div>
 		</div>
-		<div class="footBar" onclick="scrollToPage(9)">
+		<div class="footBar" onclick="scrollToPage(2)">
 			<p>Who is this "Blarry"?</p>
 		</div>
 		</section>
 
+		<section>
+			<div  class="myname">
+				<h1>Blarry Wang</h1>
+			</div>
+			<div class="bio">
+				<p>
+					I'm a junior computer science major at <font color="#8AA919">Univeristy of Washington, Seattle</font>.
+				</p>
+				<p>
+					My focus is on <font color="#8AA919">machine learning</font>,
+					<font color="#8AA919">data science</font> and <font color="#8AA919">systems</font>.
+					But you'll find me doing QA related works, Arduino hacks, or designing and building
+					a website mostly from scratch (this one).
+				</p>
+				<p>
+					In addition to my career-related interests, my other passions include political science, swing dancing,
+					and drumming.
+				</p>
+			</div>
+			<div class="colorful-wrapper">
+		</section>
 
 		<section class = "gallery-page">
 			<div class="headerBarPosition"></div>
@@ -842,36 +1090,36 @@
 			<div id="small-image">
 			</div>
 			<div class="box-container">
-				<div class="box">
+				<div class="box" onclick="scrollToPage(4)">
 					<h3>MLflow</h3>
 					<p>
-							A Cool ML library.A Cool ML library.A Cool ML library.A Cool ML library.
-							A Cool ML library. A Cool ML library.A Cool ML library.A Cool ML library.
-							A Cool ML library.A Cool ML library.
+							A machine learning library written in Python.
+							Inspired by tensorflow's design, MLflow builds
+							computation graphs and runs automatic differentiation.
 					</p>
 				</div>
-				<div class="box">
+				<div class="box" onclick="scrollToPage(5)">
 					<h3>ML Dependency Engine</h3>
 					<p>
-							A Cool ML library.A Cool ML library.A Cool ML library.A Cool ML library.
-							A Cool ML library. A Cool ML library.A Cool ML library.A Cool ML library.
-							A Cool ML library.A Cool ML library.
+							A multithreaded automatic scheduler built on top of a
+							computation graph executor. It schedules operations
+							based on resource availability.
+							It's written in Python, C++ with tvm.
 					</p>
 				</div>
-				<div class="box">
+				<div class="box" onclick="scrollToPage(6)">
 					<h3>ML From Scratch</h3>
 					<p>
-							A Cool ML library.A Cool ML library.A Cool ML library.A Cool ML library.
-							A Cool ML library. A Cool ML library.A Cool ML library.A Cool ML library.
-							A Cool ML library.A Cool ML library.
+							A repository of serval machine learning algorithms
+							implemented with Numpy in Python.
 					</p>
 				</div>
-				<div class="box">
+				<div class="box" onclick="scrollToPage(7)">
 					<h3>Mark V</h3>
 					<p>
-							A Cool ML library.A Cool ML library.A Cool ML library.A Cool ML library.
-							A Cool ML library. A Cool ML library.A Cool ML library.A Cool ML library.
-							A Cool ML library.A Cool ML library.
+							An Ironman-like VR flying experience, enhanced with physical
+							wind feedbacks using four arrays of compact fans. My role
+							focuses on the hardware hack with Arduino.
 					</p>
 				</div>
 			</div>
@@ -883,10 +1131,13 @@
 			<h2>A Machine Learning Library</h2>
 			<div class="box">
 				<p>
-					Johannes Gutenberg himself may have printed editions of Ars Minor,
-					a schoolbook on Latin grammar by Aelius Donatus. Early textbooks were
-					used by tutors and teachers, who used the books as instructional aids
-					(e.g., alphabet books), as well as individuals who taught themselves.
+					Personal Project. Built with Python and numpy.
+					MLflow is a computation graph executor for machine
+					learning implemented in Python. It has built in automatic
+					differentiation and optimizers. You can implement, train, and test
+					your neural networks in MLflow. The models can also be serialized
+					for later use.
+					<a href = "https://github.com/BBBBlarry/mlflow">See the project on Github</a>.
 				</p>
 			</div>
 			<div class="viz-container">
@@ -895,7 +1146,7 @@
 					<p>Build neural network within minutes.</p>
 				</div>
 				<div class="viz">
-					<img alt="Neural Network" src="./assets/backgrounds/optimize.png"/>
+					<img alt="Optimize" src="./assets/backgrounds/optimize.png"/>
 					<p>Automatic optimization.</p>
 				</div>
 			</div>
@@ -908,20 +1159,22 @@
 			<h2>Automatically Schedule Ops with Multithreading</h2>
 			<div class="box">
 				<p>
-					Johannes Gutenberg himself may have printed editions of Ars Minor,
-					a schoolbook on Latin grammar by Aelius Donatus. Early textbooks were
-					used by tutors and teachers, who used the books as instructional aids
-					(e.g., alphabet books), as well as individuals who taught themselves.
+					School team project, built with C++, Python and tvm.
+					The dependency engine is built to automatically schedule operations
+					in a computation graph. The engine works with both the declarative
+					style and imperative style of building neural networks. It provides a
+					high level interface in Python and implements multithreading in C++.
+					<a href = "https://github.com/CSE599-dlsys-final-project/DependencyEngine">See the project on Github</a>.
 				</p>
 			</div>
 			<div class="viz-container">
 				<div class="viz">
-					<img alt="Neural Network" src="./assets/backgrounds/neural_network.png"/>
-					<p>Build neural network within minutes.</p>
+					<img alt="scheduler" src="./assets/backgrounds/schedule.png"/>
+					<p>Scheduling on multiple threads.</p>
 				</div>
 				<div class="viz">
-					<img alt="Neural Network" src="./assets/backgrounds/optimize.png"/>
-					<p>Automatic optimization.</p>
+					<img alt="CPP" src="./assets/backgrounds/cpp.png"/>
+					<p>Backend: C++ speed.</p>
 				</div>
 			</div>
 		</section>
@@ -934,44 +1187,48 @@
 			<h2>Python + Numpy = ML Algos</h2>
 			<div class="box">
 				<p>
-					Johannes Gutenberg himself may have printed editions of Ars Minor,
-					a schoolbook on Latin grammar by Aelius Donatus. Early textbooks were
-					used by tutors and teachers, who used the books as instructional aids
-					(e.g., alphabet books), as well as individuals who taught themselves.
+					Personal project. Built with Python and Numpy.
+					Implementing a neural network without the help of a library is one
+					undertaking one should go through at least once in their lifetime…
+					here are my attempts.
+					<a href = "https://github.com/BBBBlarry/Neural-Networks-from-Scratch">See the project on Github</a>.
 				</p>
 			</div>
 			<div class="viz-container">
 				<div class="viz">
-					<img alt="Neural Network" src="./assets/backgrounds/neural_network.png"/>
-					<p>Build neural network within minutes.</p>
+					<img alt="Pencil" src="./assets/backgrounds/pencil.png"/>
+					<p>Handwritten from scratch.</p>
 				</div>
 				<div class="viz">
-					<img alt="Neural Network" src="./assets/backgrounds/optimize.png"/>
-					<p>Automatic optimization.</p>
+					<img alt="Loss" src="./assets/backgrounds/loss.png"/>
+					<p>Include backprop and optimization.</p>
 				</div>
 			</div>
 		</section>
 
+
 		<section class = "showcase-page">
 			<div class="headerBarPosition"></div>
 			<h1>Mark V</h1>
-			<h2>VR Haptic Feedback Through Fans</h2>
+			<h2>VR Experience Enhanced by Fans</h2>
 			<div class="box">
 				<p>
-					Johannes Gutenberg himself may have printed editions of Ars Minor,
-					a schoolbook on Latin grammar by Aelius Donatus. Early textbooks were
-					used by tutors and teachers, who used the books as instructional aids
-					(e.g., alphabet books), as well as individuals who taught themselves.
+					Side team project. Built with Arduino and C#.
+					Mark V is an Ironman-like VR flying experience,
+					enhanced with physical wind feedbacks using four arrays of compact fans.
+					My role focuses on the hardware hacks with Arduino: coding the Arduino
+					to communicate with VR while controlling the fans,
+					and setting up the external frame.
 				</p>
 			</div>
 			<div class="viz-container">
 				<div class="viz">
-					<img alt="Neural Network" src="./assets/backgrounds/neural_network.png"/>
-					<p>Build neural network within minutes.</p>
+					<img alt="City" src="./assets/backgrounds/city.png"/>
+					<p>Fly in different landscapes.</p>
 				</div>
 				<div class="viz">
-					<img alt="Neural Network" src="./assets/backgrounds/optimize.png"/>
-					<p>Automatic optimization.</p>
+					<img alt="Wind" src="./assets/backgrounds/wind.png"/>
+					<p>Realistic, immersive experience.</p>
 				</div>
 			</div>
 		</section>
@@ -983,11 +1240,19 @@
 			<h3>Summer, 2018 -- Now</h3>
 			<div class="box">
 				<p>
-					Johannes Gutenberg himself may have printed editions of Ars Minor,
-					a schoolbook on Latin grammar by Aelius Donatus. Early textbooks were
-					used by tutors and teachers, who used the books as instructional aids
-					(e.g., alphabet books), as well as individuals who taught themselves.
+					I worked in TIBCO Inc. Seattle office full time during the summer and is working part time during the school year.
 				</p>
+				<p>
+					As an engineering intern on a data science team, I get to practice CS related concepts in a data science context.
+					My main accomplishments include building Jenkins pipelines for different platforms,
+					creating analytics for test results, provide a terminal based solution to view analytics.
+				</p>
+				<p>
+					In addition, I also published two deep learning related articles during my internship. Find them here: 1, 2.
+				</p>
+				<a href = "https://www.linkedin.com/in/blarry/">
+					View my LinkedIn >>
+				</a>
 			</div>
 		</section>
 
@@ -999,21 +1264,35 @@
 			<h3>Aug 28, 2018</h3>
 			<div class="box">
 				<p>
-					Johannes Gutenberg himself may have printed editions of Ars Minor,
-					a schoolbook on Latin grammar by Aelius Donatus. Early textbooks were
-					used by tutors and teachers, who used the books as instructional aids
-					(e.g., alphabet books), as well as individuals who taught themselves.
+					This example will the Keras R package to build an image classifier in TIBCO&reg; Enterprise Runtime for R (TERR &trade;).
 				</p>
+				<p>
+					You will also see:
+				</p>
+				<p>
+					1. how to subset of the Cifar-10 dataset to compensate for computation resource constraints;
+				</p>
+				<p>
+					2. how to retrain a neural network with pre-trained weights;
+				</p>
+				<p>
+					3. how to do basic performance analysis on the models.
+				</p>
+				<a href = "https://community.tibco.com/wiki/deep-learning-series-part-1-transfer-learning-using-keras-tibco-enterprise-runtime-r-terr">
+					Read full article >>
+				</a>
 			</div>
 		</section>
 
 		<section>
-			<div  id="myname">
-				<h1>Blarry Wang</h1>
+			<div  class="cleanTitle">
+				<h1>Get in touch</h1>
 			</div>
-			<div id="bio">
-				<p>Long time ago, there was a berry hanging on a tree. It was contemplating, so deeply, determining whether every life has its significant value. A farmer spotted the juicy berry. Without hesitation, he picked it from the tree and bit it, omitting somewhat satisfaction. </p>
-				<p>Hmmmm, I guess every life does have its <font color="red">significant</font> value.</p>
+			<div class="cleanText">
+				<p>Thanks for stopping by! If you want to get in touch with me, email me at <font color="#8AA919">blarry.personal@gmail.com</font>.</p>
+				<p></p>
+				<p>Or, find me on Github <a href="https://github.com/BBBBlarry"><font color="#8AA919">https://github.com/BBBBlarry</font></a></p>
+				<p>LinkedIn: <a href="https://github.com/BBBBlarry"><font color="#8AA919">https://www.linkedin.com/in/blarry</font></a></p>
 			</div>
 			<div class="colorful-wrapper">
 		</section>
@@ -1033,10 +1312,11 @@
 		// progress bar code
 		function update_progress_bar(index) {
 		  var currentView = index - 1;
-		  var totalViews = 8;
+		  var totalViews = 9;
 		  var scrolled = (currentView / totalViews) * 100;
 		  document.getElementById("scroll-progress-bar").style.width = scrolled + "%";
 		}
+
 </script>
 <script src="./assets/js/color-block.js"></script>
 
